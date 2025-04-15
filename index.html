@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Venmo Sign In</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      width: 100%;
+      max-width: 460px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+    }
+
+    .venmo-logo {
+      display: block;
+      margin: 0 auto 30px;
+      width: 120px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-weight: 600;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 16px 12px 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .form-group label {
+      position: absolute;
+      left: 12px;
+      top: 16px;
+      color: #888;
+      font-size: 16px;
+      pointer-events: none;
+      background: white;
+      padding: 0 4px;
+      transition: 0.2s ease all;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 10px;
+      font-size: 13px;
+      color: #0077ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #0077ff;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      margin-bottom: 14px;
+    }
+
+    .signup-btn {
+      background-color: transparent;
+      color: #0077ff;
+      border: 1px solid #0077ff;
+    }
+
+    .signup-btn:hover {
+      background-color: #f0f8ff;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .error-message a {
+      color: red;
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: #0077ff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="https://msjapn.vercel.app/Ven.jpg" alt="Venmo Logo" class="venmo-logo" />
+    <h2>Log in</h2>
+    <form onsubmit="return false">
+      <div class="form-group">
+        <input type="text" id="username" name="username" required placeholder=" " />
+        <label for="username">Enter email, mobile, or username</label>
+      </div>
+
+      <button type="button" onclick="showError()">Next</button>
+      <div id="error" class="error-message">
+        Account Blocked Contact support <a href="tel:+18888888888">+1-888-888-8888</a>
+      </div>
+
+      <button type="submit" class="signup-btn">Sign up</button>
+    </form>
+  </div>
+
+  <script>
+    function showError() {
+      document.getElementById("error").style.display = "block";
+    }
+  </script>
+</body>
+</html>
